@@ -6,14 +6,14 @@ A YM2413 clone module written in VHDL
 ## Extra Register
 
 Unlike the original YM2413 chip, VM2413's voice parameters are stored in the extra registers 0x40 to 0xD7.
-Thus the all embedded voice can be modified. This means that we can use user-defined voice for every channels
-by mapping different voice to each channel.
+The all embedded voice can be modified through these registers. This means that we can use user-defined voice on every channels
+by mapping different voice number to each channel.
 
-The extra registers need 42 us (152 clocks) waiting time for each access.
 By default, the extra registers are disabled. To enable them, set the bit 7 of register 0xF0 to `1`. 
+The extra registers need 42 us (152 clocks) waiting time for each access.
 
 |Address|Voice|
-|:-:|:-:|
+|:-:|:--|
 |0x40-0x47|@15 User|　　　　　　
 |0x48-0x4F|@0 Violin|
 |0x50-0x57|@1 Guitar|
@@ -34,6 +34,6 @@ By default, the extra registers are disabled. To enable them, set the bit 7 of r
 |0xC8-0xCF|HH & SD|
 |0xD0-0xD7|TOM & CYM|
 
-Note that MSX-BASIC's MML do not allow to access the extra registers.
-If you try to test this feature from 1chip MSX (a commercial product which employes VM2413), use `OUT` command instead.
+Note that the MSX-MUSIC `y` MML command can not write the extra registers.
+To access the extra registers through MSX-MUSIC on VM2413 (ex. 1chip MSX), use `OUT` command instead.
 
