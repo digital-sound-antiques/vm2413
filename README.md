@@ -9,9 +9,7 @@ Unlike the original YM2413 chip, VM2413's voice parameters are stored in the ext
 Thus the all embedded voice can be modified. This means that we can use user-defined voice for every channels
 by mapping different voice to each channel.
 
-- By default, the extra registers are disabled. To enable them, set the bit 7 of register 0xF0 to `1`. 
-- The extra registers need 42 us (152 clocks) waiting time for each access.
-- Each voice consists of 8 registers. The schema is the same as the register 0x00-0x07.
+By default, the extra registers are disabled. To enable them, set the bit 7 of register 0xF0 to `1`. 
 
 |Address|Voice|
 |:-:|:-:|
@@ -34,6 +32,8 @@ by mapping different voice to each channel.
 |0xC0-0xC7|BD|
 |0xC8-0xCF|HH & SD|
 |0xD0-0xD7|TOM & CYM|
+
+The extra registers need 42 us (152 clocks) waiting time for each access.
 
 Note that MSX-BASIC's MML do not allow to access the extra registers.
 If you try to test this feature from 1chip MSX (a commercial product which employes VM2413), use `OUT` command instead.
