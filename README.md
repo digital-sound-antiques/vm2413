@@ -6,7 +6,7 @@ A YM2413 clone module written in VHDL
 ## Extra Register
 
 Unlike the original YM2413 chip, VM2413's voice parameters are stored in the extra registers 0x40 to 0xD7.
-Thus the all embedded voice be modified. This means that we can use user-defined voice for every channels
+Thus the all embedded voice can be modified. This means that we can use user-defined voice for every channels
 by mapping different voice to each channel.
 
 - By default, the extra registers are disabled. To enable them, set the bit 7 of register 0xF0 to `1`. 
