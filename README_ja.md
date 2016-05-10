@@ -33,6 +33,5 @@ A YM2413 互換モジュール VHDL
 |0xC8-0xCF|HH & SD|
 |0xD0-0xD7|TOM & CYM|
 
-Note that MSX-BASIC's MML do not allow to access the extra registers.
-If you try to test this feature from 1chip MSX (a commercial product which employes VM2413), use `OUT` command instead.
+なお、MSX-BASIC の MML の `y` コマンドでは、上記のレジスタにアクセスできません。1chip MSX など VM2413 を搭載した環境のBASICで上記のレジスタを利用する際は、`OUT`　コマンドを使う必要があります。
 
